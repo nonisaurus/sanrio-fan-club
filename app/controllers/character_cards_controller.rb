@@ -1,5 +1,7 @@
 class CharacterCardsController < ApplicationController
-    def index
-        
+    before_action :authenticate_user!, only: [:cards]
+
+    def cards
+        @character_cards = CharacterCard.all
     end
 end

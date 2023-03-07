@@ -7,5 +7,4 @@ class PagesController < ApplicationController
   def extrainfo
   end
 
-
 end

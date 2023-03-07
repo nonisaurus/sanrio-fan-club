@@ -3,7 +3,8 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index, :show, :create, :update, :delete]
 
-  get 'characters', to:'character_cards#index'
+  get 'chat', to: 'messages#chat'
+  get 'characters', to:'character_cards#cards'
   get 'pages/home'
   get 'pages/extrainfo'
 

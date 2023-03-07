@@ -1,0 +1,21 @@
+<h1><%= current_user.username %>'s favourite characters </h1>
+
+<div class="row">
+  <% @character_cards.each do |character_card| %>
+    <%= render partial: 'card_template', locals: { character_card: character_card } %>
+  <% end %>
+</div>
+
+<div class="col-md-4 mb-4">
+  <div class="card">
+    <%= image_tag("own_c.png", class: "card-img-top", size: "100x200") %>
+    <div class="card-body">
+      <h5 class="card-title">Character's Name</h5>
+      <p class="card-text">Birthday: </p>
+      <p class="card-text">Location: </p>
+      <p class="card-text">Favorite food: </p>
+      <p class="card-text">Favorite color: </p>
+      <button type="button" class="btn btn-light">Add</button>
+    </div>
+  </div>
+</div>

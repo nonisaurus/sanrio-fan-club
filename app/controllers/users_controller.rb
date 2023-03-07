@@ -1,8 +1,13 @@
 class UsersController < ApplicationController
+    # before_action :authenticate_user!
     before_action :set_user, only: [:show, :edit, :update, :destroy]
 
     def index
-        @users = current_user ? [current_user] : []
+        if current_user
+            @users = [current_user]
+          else
+            redirect_to new_user_session_path, alert: "You need to sign in or sign up to look at your profile."
+          end
     end
   
     def show

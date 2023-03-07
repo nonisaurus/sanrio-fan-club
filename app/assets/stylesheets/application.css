@@ -28,5 +28,10 @@
    background-color: #d4eefc;
    border-color: #fbe0e7;
  }
+ 
+ .card-body {
+  height: 250px;
+  font-size: 0.5rem;
+}
 
  
