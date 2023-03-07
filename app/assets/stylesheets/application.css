@@ -18,3 +18,15 @@
     background: #fef2f4;
     color:  #8f81bc;
  }
+
+ .btn-outline-secondary {
+   border-color: #fbe0e7;
+   color: #8f81bc;
+ }
+
+ .btn-outline-secondary:hover {
+   background-color: #d4eefc;
+   border-color: #fbe0e7;
+ }
+
+ 

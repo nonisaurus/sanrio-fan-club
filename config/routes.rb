@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index, :show, :create, :update, :delete]
 
+  get 'characters', to:'character_cards#index'
   get 'pages/home'
   get 'pages/extrainfo'
 

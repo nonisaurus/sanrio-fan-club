@@ -8,15 +8,17 @@
                 <div class="card user-card-full">
                     <div class="row m-l-0 m-r-0">
 
-
-                        <div class="col-sm-4 bg-c-lite-green user-profile">
-                            <div class="card-block text-center text-white">
-                                <div class="m-b-25">
-                                    <p class="m-b-10 f-w-600"> this should eventually be an image tag</p>
+                        <div class="col-sm-4 user-profile d-flex align-items-center justify-content-center">
+                            <div class="card-block text-center">
+                                <div class="align-items-center justify-content-center" style="height: 200px;">
+                                    <% if current_user.profile_pic.present? %>
+                                        <%= image_tag(current_user.profile_pic, size: "200x200")%>
+                                    <% else %>
+                                        <%= image_tag("default_prof_pic.png", size: "200x200")%>
+                                    <% end %>                                
                                 </div>
                             </div>
                         </div>
-
 
                         <div class="col-sm-8">
                             <div class="card-block">
@@ -28,10 +30,7 @@
                                         <h6 class="text-muted f-w-400"> <%= current_user.first_name %> </h6>
                                     </div>
                                     <div class="col-sm-1">
-                                        <button type="button" class="btn p-1 btn-outline-secondary btn-sm">Edit</button>
-                                    </div>
-                                    <div class="col-sm-1">
-                                        <button type="button" class="btn p-1 btn-outline-secondary btn-sm">Clear</button>
+                                        <button type="button" class="btn btn-outline-secondary btn-sm">Edit</button>
                                     </div>
                                 </div>
 
@@ -41,10 +40,7 @@
                                         <h6 class="text-muted f-w-400"> <%= current_user.last_name %> </h6>
                                     </div>
                                     <div class="col-sm-1">
-                                        <button type="button" class="btn p-1 btn-outline-secondary btn-sm">Edit</button>
-                                    </div>
-                                    <div class="col-sm-1">
-                                        <button type="button" class="btn p-1 btn-outline-secondary btn-sm">Clear</button>
+                                        <button type="button" class="btn btn-outline-secondary btn-sm">Edit</button>
                                     </div>
                                 </div>
 
@@ -54,10 +50,7 @@
                                         <h6 class="text-muted f-w-400"> <%= current_user.username %> </h6>
                                     </div>
                                     <div class="col-sm-1">
-                                        <button type="button" class="btn p-1 btn-outline-secondary btn-sm">Edit</button>
-                                    </div>
-                                    <div class="col-sm-1">
-                                        <button type="button" class="btn p-1 btn-outline-secondary btn-sm">Clear</button>
+                                        <button type="button" class="btn btn-outline-secondary btn-sm">Edit</button>
                                     </div>
                                 </div>
 
@@ -67,10 +60,7 @@
                                         <h6 class="text-muted f-w-400"> <%= current_user.email %> </h6>
                                     </div>
                                     <div class="col-sm-1">
-                                        <button type="button" class="btn p-1 btn-outline-secondary btn-sm">Edit</button>
-                                    </div>
-                                    <div class="col-sm-1">
-                                        <button type="button" class="btn p-1 btn-outline-secondary btn-sm">Clear</button>
+                                        <button type="button" class="btn btn-outline-secondary btn-sm">Edit</button>
                                     </div>
                                 </div>
 
@@ -80,11 +70,8 @@
                                         <h6 class="text-muted f-w-400"> <%= current_user.password %> </h6>
                                     </div>
                                     <div class="col-sm-1">
-                                        <button type="button" class="btn p-1 btn-outline-secondary btn-sm">Edit</button>
-                                    </div>
-                                    <div class="col-sm-1">
-                                        <button type="button" class="btn p-1 btn-outline-secondary btn-sm">Clear</button>
-                                    </div>                                    
+                                        <button type="button" class="btn btn-outline-secondary btn-sm">Edit</button>
+                                    </div>                                 
                                 </div>
 
                             </div>
