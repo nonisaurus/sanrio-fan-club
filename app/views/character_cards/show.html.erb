@@ -1,0 +1,15 @@
+<h1>Is <%= @character_card.name %> your favourite?</h1>
+
+<div class="col-md-4 mb-4">
+  <div class="card">
+    <%= image_tag(@character_card.image, class: "card-img-top", size: "100x200") %>
+    <div class="card-body">
+      <h5 class="card-title"><%= @character_card.name %></h5>
+      <p class="card-text">Birthday: <%= @character_card.birthday %></p>
+      <p class="card-text">Location: <%= @character_card.location %></p>
+      <p class="card-text">Favorite food: <%= @character_card.fav_food %></p>
+      <p class="card-text">Favorite color: <%= @character_card.fave_colour %></p>
+      <button type="button" class="btn btn-light">Edit</button>
+    </div>
+  </div>
+</div>

@@ -4,7 +4,19 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show, :create, :update, :delete]
 
   get 'chat', to: 'messages#chat'
+
   get 'characters', to:'character_cards#cards'
+  get 'characters/:id', to:'character_cards#show'
+  get 'character/new', to: 'character_cards#new'
+  get 'character', to: 'character_cards#create'
+  get 'character/:id/edit', to: 'character_cards#edit'
+  patch 'character/:id', to: 'character_cards#update'
+  delete 'character/:id', to: 'character_cards#destroy'
+
+
+
+
+
   get 'pages/home'
   get 'pages/extrainfo'
 
