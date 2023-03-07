@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  character_id: 1
+  name: MyString
+  birthday: MyString
+  location: MyString
+  fav_food: MyString
+  fave_colour: MyString
+  image: MyString
+  protected: false
+
+two:
+  user: two
+  character_id: 1
+  name: MyString
+  birthday: MyString
+  location: MyString
+  fav_food: MyString
+  fave_colour: MyString
+  image: MyString
+  protected: false
