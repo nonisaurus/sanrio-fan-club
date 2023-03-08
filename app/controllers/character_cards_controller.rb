@@ -1,16 +1,12 @@
 class CharacterCardsController < ApplicationController
     before_action :authenticate_user!, only: [:cards, :show, :new, :create, :delete]
 
-    def cards
+    def index
         @character_cards = CharacterCard.all
     end
 
     def show
-        if params[:id] == "new"
-            redirect_to new_character_card_path
-        else
-            @character_card = CharacterCard.find(params[:id])
-        end
+        @character_card = CharacterCard.find(params[:id])
     end
   
     def new
@@ -18,24 +14,18 @@ class CharacterCardsController < ApplicationController
     end
   
     def edit
+        @character_card = CharacterCard.find(params[:id])
     end
   
     def create
-        @character_card = CharacterCard.new(character_card_params)
-
-        if @character_card.save
-            redirect_to @character_card
-        else
-            render :new
-        end
+        @character_card.create(character_card_params)
+        redirect_to character_cards_path, notice: 'Character card was successfully created.'
     end
   
     def update
-        if @character_card.update()
-            redirect_to @character_card, notice: 'Character card was successfully updated.'
-        else
-            render :edit
-        end
+        @character_card = CharacterCard.find(params[:id])
+        # @character_card.update(params[:id])
+        redirect_to @character_card, notice: 'Character card was successfully updated.'
     end
 
     def destroy
@@ -47,12 +37,14 @@ class CharacterCardsController < ApplicationController
           flash[:success] = "Character card was successfully deleted."
         end
         redirect_to character_cards_path
-      end
+    end
 
-    private
+    # private
 
     def set_character_card
     @character_card = CharacterCard.find(params[:id])
     end
+
+
 
 end

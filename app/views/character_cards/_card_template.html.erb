@@ -7,8 +7,9 @@
       <p class="card-text shrink-text">Location: <%= character_card.location %></p>
       <p class="card-text shrink-text">Favorite food: <%= character_card.fav_food %></p>
       <p class="card-text shrink-text">Favorite color: <%= character_card.fave_colour %></p>
-      <button type="button" >Edit</button>
-      <button type="button" data-toggle="modal" data-target="#editModal">Delete</button>
+      <%= link_to 'View', character_card_path(character_card), class: 'btnc btn-pink' %>
+      <%= link_to 'Update', edit_character_card_path(character_card), class: 'btnc btn-pink' %>
+      <%= link_to 'Delete', character_cards_path(character_card), class: 'btnc btn-pink' %>
     </div>
   </div>
 </div>

@@ -10,7 +10,7 @@
         <p class="card-text">Location: <%= @character_card.location %></p>
         <p class="card-text">Favorite food: <%= @character_card.fav_food %></p>
         <p class="card-text">Favorite color: <%= @character_card.fave_colour %></p>
-        <button type="button" class="btn btn-light">Edit</button>
+        <%= link_to "Back", character_cards_path, class: 'btnc btn-pink' %>
       </div>
     </div>
   </div>
