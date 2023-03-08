@@ -34,4 +34,25 @@
   font-size: 0.5rem;
 }
 
+.card-container {
+  flex-wrap: wrap;
+  display: flex;
+}
+
+.card-middle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.shrink-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+
+
  

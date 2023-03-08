@@ -1,21 +1,28 @@
-<h1><%= current_user.username %>'s favourite characters </h1>
-
-<div class="row">
-  <% @character_cards.each do |character_card| %>
-    <%= render partial: 'card_template', locals: { character_card: character_card } %>
+<h1 class="card-middle">
+  <% if current_user %>
+    <%= "#{current_user.username}'s favourite characters" %>
+  <% else %>
+    <%= "Favourite characters" %>
   <% end %>
-</div>
+</h1>
 
-<div class="col-md-4 mb-4">
-  <div class="card">
-    <%= image_tag("own_c.png", class: "card-img-top", size: "100x200") %>
-    <div class="card-body">
-      <h5 class="card-title">Character's Name</h5>
-      <p class="card-text">Birthday: </p>
-      <p class="card-text">Location: </p>
-      <p class="card-text">Favorite food: </p>
-      <p class="card-text">Favorite color: </p>
-      <button type="button" class="btn btn-light">Add</button>
+<div class="card-container">
+
+    <% @character_cards.each do |character_card| %>
+        <%= render partial: 'card_template', locals: { character_card: character_card } %>
+    <% end %>
+    
+    <div class="col-md-3 mb-4">
+    <div class="card">
+        <%= image_tag("own_c.png", class: "card-img-top", size: "100x200") %>
+        <div class="card-body">
+        <h5 class="card-title shrink-text">Character's Name</h5>
+        <p class="card-text shrink-text">Birthday: </p>
+        <p class="card-text shrink-text">Location: </p>
+        <p class="card-text shrink-text">Favorite food: </p>
+        <p class="card-text shrink-text">Favorite color: </p>
+        <%= link_to 'Add', new_character_card_path, type:"button" %>
+        </div>
     </div>
-  </div>
+    </div>
 </div>
