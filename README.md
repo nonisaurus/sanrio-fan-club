@@ -35,7 +35,6 @@ As a user I should be able to
 - Rails 7.0.4 web application framework
 - PostgreSQL database management system
 - Puma as the web server
-- Turbo and Stimulus from Hotwire for front-end development
 - Jbuilder for building JSON APIs
 - Devise for user authentication
 - Bootsnap for faster application boot times
