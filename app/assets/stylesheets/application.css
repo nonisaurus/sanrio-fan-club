@@ -94,6 +94,10 @@
   flex-direction: column;
 }
 
+.full-page {
+  height: 80vh;
+}
+
 
 
 

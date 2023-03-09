@@ -1,5 +1,5 @@
 class CharacterCardsController < ApplicationController
-    before_action :authenticate_user!, only: [:cards, :show, :new, :create, :delete]
+    before_action :authenticate_user!
 
     def index
         @character_cards = CharacterCard.all
@@ -18,15 +18,17 @@ class CharacterCardsController < ApplicationController
     end
   
     def create 
-        @character_card = CharacterCard.new(params.require(:character_card).permit(:name, :birthday, :location, :fav_food, :fave_colour))
-        @character_card.protected = false
-        redirect_to character_cards_path, notice: 'Character card was successfully created.'
-
+        @character_card = current_user.character_cards.build(character_card_params)
+        if @character_card.save
+          redirect_to character_cards_path, notice: 'Character card was successfully created.'
+        else
+          render :new
+        end
     end
   
     def update
         @character_card = CharacterCard.find(params[:id])
-        @character_card.update(params.require(:character_card).permit(:name, :birthday, :location, :fav_food, :fave_colour))
+        @character_card.update!(params.require(:character_card).permit(:name, :birthday, :location, :fav_food, :fave_colour))
         redirect_to character_cards_path, notice: 'Character card was successfully updated.'
 
     end
@@ -42,5 +44,9 @@ class CharacterCardsController < ApplicationController
         redirect_to character_cards_path
     end
 
+    private
 
+    def character_card_params
+        params.require(:character_card).permit(:name, :birthday, :location, :fav_food, :fave_colour)
+    end
 end

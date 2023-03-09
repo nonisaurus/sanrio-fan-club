@@ -1,13 +1,9 @@
 class UsersController < ApplicationController
-    # before_action :authenticate_user!
-    before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, message: "Please sign in to view this page"
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
 
     def index
-        if current_user
-            @users = User.all
-          else
-            redirect_to new_user_session_path, alert: "You need to sign in or sign up to look at your profile."
-          end
+      @users = User.all
     end
   
     def show
@@ -29,8 +25,8 @@ class UsersController < ApplicationController
   
     def update
       @user = User.find(params[:id])
-      if @user.update(user_params)
-        redirect_to @user
+      if @user.update!(user_params)
+        redirect_to users_path
       else
         render 'edit'
       end

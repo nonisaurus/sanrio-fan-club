@@ -1,4 +1,11 @@
-<h1>Welcome to Sanrio Fan Club</h1>
-<p>all things cute and sweet</p>
+<div class="card-middle full-page">
+    <h1>Welcome to Sanrio Fan Club</h1>
+    <p>all things cute and sweet</p>
 
-<p> please click <%= link_to "Login", new_user_session_path %> if you haven't already signed in </p>
+
+    <% if user_signed_in? %>
+    <p>I hope you have fun adding your own character cards and eventually be able to chat with others.</p>
+    <% else %>
+    <p>Please click <%= link_to "Login", new_user_session_path %> to sign in and start adding your characters.</p>
+    <% end %>
+</div>

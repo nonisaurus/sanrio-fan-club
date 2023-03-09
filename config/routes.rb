@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users
   resources :character_cards
+  resources :messages
   root 'pages#home'
   get 'pages/home'
   get 'pages/extrainfo'
