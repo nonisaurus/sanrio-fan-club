@@ -114,4 +114,4 @@ While I am happy with how my project turned out, I do think there's room for imp
 
 ## Bugs
 
-I did not include a feature for the forgotten password button.
+None known.
