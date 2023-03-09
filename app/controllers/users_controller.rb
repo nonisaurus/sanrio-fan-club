@@ -4,13 +4,14 @@ class UsersController < ApplicationController
 
     def index
         if current_user
-            @users = [current_user]
+            @users = User.all
           else
             redirect_to new_user_session_path, alert: "You need to sign in or sign up to look at your profile."
           end
     end
   
     def show
+      @user = User.find(params[:id])
     end
   
     def new
@@ -18,23 +19,20 @@ class UsersController < ApplicationController
     end
   
     def edit
-
+      @user = User.find(params[:id])
     end
   
     def create
       @user = User.new(user_params)
-      if @user.save
-        redirect_to @user, notice: 'User was successfully created.'
-      else
-        render :new
-      end
+      redirect_to @user, notice: 'User was successfully created.'
     end
   
     def update
+      @user = User.find(params[:id])
       if @user.update(user_params)
-        redirect_to @user, notice: 'User was successfully updated.'
+        redirect_to @user
       else
-        render :edit
+        render 'edit'
       end
     end
   
@@ -48,7 +46,11 @@ class UsersController < ApplicationController
         @user = User.find(params[:id])
     end
 
+    # def user_params
+    # params.require(:user).permit(:email, :password, :password_confirmation, :first_name, :last_name, :username, :bio, :profile_pic)
+    # end
+
     def user_params
-    params.require(:user).permit(:email, :password, :password_confirmation, :first_name, :last_name, :username, :bio, :profile_pic)
+      params.require(:user).permit(:first_name, :last_name, :username, :bio)
     end
 end

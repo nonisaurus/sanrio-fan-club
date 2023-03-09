@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :users, only: [:index, :show, :create, :update, :delete]
+  resources :users
   resources :character_cards
   root 'pages#home'
   get 'pages/home'

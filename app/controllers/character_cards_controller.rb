@@ -17,20 +17,23 @@ class CharacterCardsController < ApplicationController
         @character_card = CharacterCard.find(params[:id])
     end
   
-    def create
-        @character_card.create(character_card_params)
+    def create 
+        @character_card = CharacterCard.new(params.require(:character_card).permit(:name, :birthday, :location, :fav_food, :fave_colour))
+        @character_card.protected = false
         redirect_to character_cards_path, notice: 'Character card was successfully created.'
+
     end
   
     def update
         @character_card = CharacterCard.find(params[:id])
-        # @character_card.update(params[:id])
-        redirect_to @character_card, notice: 'Character card was successfully updated.'
+        @character_card.update(params.require(:character_card).permit(:name, :birthday, :location, :fav_food, :fave_colour))
+        redirect_to character_cards_path, notice: 'Character card was successfully updated.'
+
     end
 
     def destroy
         @character_card = CharacterCard.find(params[:id])
-        if @character_card.is_protected?
+        if @character_card.protected?
           flash[:error] = "This character card is protected and cannot be deleted."
         else
           @character_card.destroy
@@ -38,13 +41,6 @@ class CharacterCardsController < ApplicationController
         end
         redirect_to character_cards_path
     end
-
-    # private
-
-    def set_character_card
-    @character_card = CharacterCard.find(params[:id])
-    end
-
 
 
 end

@@ -1,4 +1,4 @@
-<h1> Welcome <%= current_user.username %>! </h1>
+<h1 class="card-middle"> Welcome <%= current_user.username %>! </h1>
 
 
 <div class="page-content page-container" id="page-content">
@@ -6,7 +6,7 @@
         <div class="row container d-flex justify-content-center">
             <div class="col-xl-6 col-md-12">
                 <div class="card user-card-full">
-                    <div class="row m-l-0 m-r-0">
+                    <div class="row m-l-0 m-r-0 mb-4 mt-4 mx-2">
 
                         <div class="col-sm-4 user-profile d-flex align-items-center justify-content-center">
                             <div class="card-block text-center">
@@ -30,7 +30,6 @@
                                         <h6 class="text-muted f-w-400"> <%= current_user.first_name %> </h6>
                                     </div>
                                     <div class="col-sm-1">
-                                        <button type="button" class="btn btn-outline-secondary btn-sm">Edit</button>
                                     </div>
                                 </div>
 
@@ -39,9 +38,6 @@
                                         <p class="m-b-10 f-w-600">Last Name</p>
                                         <h6 class="text-muted f-w-400"> <%= current_user.last_name %> </h6>
                                     </div>
-                                    <div class="col-sm-1">
-                                        <button type="button" class="btn btn-outline-secondary btn-sm">Edit</button>
-                                    </div>
                                 </div>
 
                                 <div class="row">
@@ -49,31 +45,27 @@
                                         <p class="m-b-10 f-w-600">Username</p>
                                         <h6 class="text-muted f-w-400"> <%= current_user.username %> </h6>
                                     </div>
-                                    <div class="col-sm-1">
-                                        <button type="button" class="btn btn-outline-secondary btn-sm">Edit</button>
-                                    </div>
                                 </div>
 
                                 <div class="row">
                                     <div class="col-sm-6">
-                                        <p class="m-b-10 f-w-600">Email</p>
-                                        <h6 class="text-muted f-w-400"> <%= current_user.email %> </h6>
-                                    </div>
-                                    <div class="col-sm-1">
-                                        <button type="button" class="btn btn-outline-secondary btn-sm">Edit</button>
+                                        <p class="m-b-10 f-w-600">Bio</p>
+                                        <h6 class="text-muted f-w-400"> <%= current_user.bio %> </h6>
                                     </div>
                                 </div>
+                                        
 
-                                 <div class="row">
+                                <div class="row">
                                     <div class="col-sm-6">
-                                        <p class="m-b-10 f-w-600">Password</p>
-                                        <h6 class="text-muted f-w-400"> <%= current_user.password %> </h6>
+                                        <%= link_to "Edit log in Details", edit_user_registration_path(@user), class:"btn btn-outline-secondary btn-sm" %>
                                     </div>
-                                    <div class="col-sm-1">
-                                        <button type="button" class="btn btn-outline-secondary btn-sm">Edit</button>
-                                    </div>                                 
                                 </div>
-
+                                    
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <%= link_to "Edit Profile Details", edit_user_path(current_user), class: "mt-2 btn btn-outline-secondary btn-sm" %>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

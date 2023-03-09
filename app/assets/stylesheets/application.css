@@ -76,7 +76,23 @@
   height: 30rem;
 }
 
+.pad-top{
+  padding-top: 3rem;
+}
 
+.smaller-font{
+  font-size: 0.7rem;
+}
+
+.larger-font {
+  font-size: 1.4rem;
+}
+
+.space {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
 
 
 

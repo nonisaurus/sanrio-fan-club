@@ -1,15 +1,16 @@
 class MessagesController < ApplicationController
     before_action :authenticate_user!, only: [:chat]
-
-    def chat
-    end
-
     before_action :set_message, only: [:show, :edit, :update, :destroy]
   
     def index
       @messages = current_user.messages
     end
   
+    def message
+      
+    end
+
+
     def show
         @messages = Message.find(params[:id])
     end

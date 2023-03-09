@@ -1,6 +1,10 @@
 <div class="col-md-3 mb-4">
   <div class="card">
-    <%= image_tag(character_card.image, class: "card-img-top", size: "100x200") %>
+    <% if character_card.image.present? %>
+        <%= image_tag(character_card.image, class: "card-img-top", size: "100x200")%>
+    <% else %>
+        <%= image_tag("default_prof_pic.png", class: "card-img-top", size: "100x200") %>
+    <% end %> 
     <div class="card-body">
       <h5 class="card-title shrink-text"><%= character_card.name %></h5>
       <p class="card-text shrink-text">Birthday: <%= character_card.birthday %></p>
@@ -9,7 +13,7 @@
       <p class="card-text shrink-text">Favorite color: <%= character_card.fave_colour %></p>
       <%= link_to 'View', character_card_path(character_card), class: 'btnc btn-pink' %>
       <%= link_to 'Update', edit_character_card_path(character_card), class: 'btnc btn-pink' %>
-      <%= link_to 'Delete', character_cards_path(character_card), class: 'btnc btn-pink' %>
+      <%= link_to 'Delete', character_card_path(character_card), class: 'btnc btn-pink',  data: {turbo_method: :delete, turbo_confirm: "Are you sure want to delete #{character_card.name}?"}%>
     </div>
   </div>
 </div>

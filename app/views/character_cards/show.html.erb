@@ -3,7 +3,11 @@
 
   <div class="col-md-4 mb-4 card-middle">
     <div class="card ">
-      <%= image_tag(@character_card.image, class: "card-img-top", size: "100x200") %>
+      <% if @character_card.image.present? %>
+          <%= image_tag(@character_card.image, class: "card-img-top", size: "100x200")%>
+      <% else %>
+          <%= image_tag("default_prof_pic.png", class: "card-img-top", size: "100x200") %>
+      <% end %> 
       <div class="card-body">
         <h5 class="card-title"><%= @character_card.name %></h5>
         <p class="card-text">Birthday: <%= @character_card.birthday %></p>
