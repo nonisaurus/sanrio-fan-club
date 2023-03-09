@@ -1,37 +1,29 @@
 <%= form_for @user do |f|%>    
 
     <div class="card-middle m-5">
+        <h2> Edit your profile details </h2>
         <div class="card longer">
-                <div class="card-body">
                     <div class="card-body larger-font card-middle space">
-
-                        <div class="field">
+                        <div class="field card-middle m-larger">
                             <%= f.label :first_name, "First Name" %>
                             <%= f.text_field :first_name %>
                         </div>
 
-                        <div class="field">
+                        <div class="field card-middle m-larger">
                             <%= f.label :last_name, "Last Name" %>
                             <%= f.text_field :last_name %>
                         </div>
 
-                        <div class="field">
+                        <div class="field card-middle m-larger">
                             <%= f.label :username, "Username" %>
                             <%= f.text_field :username %>
                         </div>
                         
-                        <div class="field">
+                        <div class="field card-middle m-larger">
                             <%= f.label :bio, "Bio" %>
                             <%= f.text_field :bio %>
                         </div>
-
-                        <%# <div class="field">
-                            <%= f.label :password_confirmation, "Confirm with password" %><br />
-                            <%# <%= f.password_field :password_confirmation, autocomplete: "new-password" %> %>
-                        <%# </div> %> %>
-
-                <%= f.submit "Submit", :class => "button btn btn-light " %>
-            </div>
+                <%= f.submit "Submit", :class => "p-2 m-4 btn btn-outline-secondary btn-sm" %>
         </div>
     </div>
 

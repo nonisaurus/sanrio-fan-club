@@ -1,6 +1,8 @@
 class CharacterCard < ApplicationRecord
   belongs_to :user
 
+  mount_uploader :avatar, AvatarUploader
+
   validates :name, presence: true
   validates :name, length: {minimum: 3, too_short: "Name has to be at least %{count} characters long"}
 

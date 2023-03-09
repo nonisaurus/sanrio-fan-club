@@ -2,7 +2,7 @@ class CharacterCardsController < ApplicationController
     before_action :authenticate_user!
 
     def index
-        @character_cards = CharacterCard.all
+        @character_cards = current_user.character_cards.all
     end
 
     def show
