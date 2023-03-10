@@ -4,9 +4,6 @@ An application for Sanrio fans.
 
 <br>
 
-## Overview
-
-<br>
 
 ## User stories
 As a user I should be able to
