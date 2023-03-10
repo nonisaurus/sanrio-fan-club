@@ -103,9 +103,61 @@
   margin: 2rem;
 }
 
-/* .m-larger {
-  padding: 1.8rem;
-} */
+.text-center{
+  text-align: center;
+  justify-content: center;
+}
+
+.align-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 80vh;
+  margin: 2rem;
+}
+
+.wider {
+  width: 20rem;
+  height: 20rem;
+}
+
+.thinner{
+  width: 2rem;
+  height: 2rem;
+}
+
+.border {
+  border-radius: 5px;
+  border: solid 3px pink;
+  width: 70vh;
+  margin: 1rem;
+}
+
+.comment-name{
+  border-radius: 5px;
+  border: solid 3px pink;
+  background-color: #eed9fb;
+  width: 100%;
+  padding: 0.2rem;
+  opacity: 0.7;
+  font-size: smaller;
+}
+
+.comment-field {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.btn-comment {
+  border-radius: 0.5em;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  padding: 1rem;
+  margin-left: 4rem;
+}
 
 
 

@@ -15,9 +15,9 @@
         <%= link_to "Characters", character_cards_path, class: "nav-link", style: "color: #8f81bc;" %>
       </li>
 
-      <%# <li class="nav-item">
-        <%= link_to "Chat", chat_path, class: "nav-link", style: "color: #8f81bc;" %>
-      <%# </li>  %>
+      <li class="nav-item">
+        <%= link_to "Comments", messages_path, class: "nav-link", style: "color: #8f81bc;" %>
+      </li>
 
       <li class="nav-item">
         <%= link_to "Extra Info", pages_extrainfo_path, class: "nav-link", style: "color: #8f81bc;" %>
@@ -38,6 +38,7 @@
     <% end %>
 
     </ul>
+    <%# Bootstrap search bar - may wanna use it %>
     <%# <form class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-10" type="search" placeholder="Search" aria-label="Search" >
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="background-color: #ffff99; border-color: white; color: 944dff;">Search</button>

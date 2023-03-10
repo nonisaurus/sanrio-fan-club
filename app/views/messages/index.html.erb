@@ -1,1 +1,32 @@
-    <h1>Chat</h1>
+<div class="card-middle">
+    <h1>Comments</h1>
+
+    <div class="card-middle">
+        <h6>feel free to leave a forever comment</h6>
+        <%= form_with model: Message.new do |form| %>
+        <div class="align-row">
+            <%= form.text_area :message, rows: 2, class: "form-control width" %>
+            <%= form.submit "Submit", class: "btn-comment btn-pink" %>
+        </div>
+        <% end %>
+    </div>
+
+    <div class="card-middle ">
+        <% @messages.each do |message| %>
+            <div class="card-middle border">
+                <h3 class="comment-name"><%= message.user.email.split('@').first %></h3>
+                <div class="comment-field">
+                    <%= message.message %>
+                    <%# <% if current_user == message.user %>
+                    <%# <%= link_to "Delete", messages_path(message), method: :delete, data: { confirm: "Are you sure you want to delete this message?" }, class: "btnc btn-pink" %> 
+                    <%# <% end %> 
+                </div>
+            </div>
+        <% end %>
+    </div>
+
+</div>
+
+
+
+

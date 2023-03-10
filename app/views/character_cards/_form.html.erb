@@ -1,7 +1,7 @@
 <%= form_for @character_card do |f|%>    
 
     <div class="col-md-4 mb-4 card-middle ">
-        <div class="card longer">
+        <div class="card longer m-2 card-middle">
             <% if @character_card.image.present? %>
                 <%= image_tag(@character_card.image, class: "card-img-top", size: "100x200")%>
             <% else %>
@@ -29,7 +29,7 @@
                             <%= f.label :fave_colour, "Favourite color" %>
                             <%= f.text_field :fave_colour %>
                         </div>
-                <%= f.submit "Submit", :class => "button btn btn-light" %>
+                <%= f.submit "Submit", :class => "btnc btn-pink m-2" %>
             </div>
         </div>
     </div>
