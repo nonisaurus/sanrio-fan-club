@@ -57,10 +57,6 @@ On day one, I invested my time and energy into the planning phase of my project,
 ***
 I began my project with a clear plan in mind and proceeded to establish the Ruby on Rails framework as the foundation. Next, I tackled the authorization component, which proved to be relatively straightforward due to the well-documented nature of the process. Utilizing Devise provided an excellent starting point for my project, and I was impressed by the abundance of built-in features. The next phase involved the establishment of the correct relationships between my models, which I determined would be best accomplished through a one-to-many approach. After completing my models, I proceeded to create the necessary controllers, a process that required a significant amount of time. Finally, I worked on the implementation of routes, which was a gratifying experience as I was able to witness prompt results on the screen. However, I encountered some challenges in ensuring that everything was correctly linked, which presented a slight issue later on.
 
-create controller
-bootsrap
-nav bar
-set upo routes
 
 ### Day 3
 ***
@@ -91,7 +87,7 @@ end
 
 ### Day 4
 ***
-On the final day of the project, I focused on the crucial tasks of debugging and perfecting the CSS styling. Once the debugging was complete, the next priority was deploying the application to ensure it was available to users.
+On the final day of the project, I focused on the crucial tasks of debugging and perfecting the CSS styling. Once the debugging was complete, the next priority was deploying the application to ensure it was available to users although I did not get around to this.
 
 <br>
 
